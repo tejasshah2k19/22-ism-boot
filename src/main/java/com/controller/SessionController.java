@@ -16,6 +16,8 @@ import com.bean.ResponseBean;
 import com.bean.UserBean;
 import com.dao.UserDao;
 
+import ch.qos.logback.core.status.Status;
+
 @RestController
 public class SessionController {
 
@@ -37,10 +39,15 @@ public class SessionController {
 			return ResponseEntity.ok(user);
 		} else {
 			ResponseBean<UserBean> res = new ResponseBean<>();
-			res.setData(user);//back 
-			res.setMsg("Email Already Exists");//errmsg 
+			res.setData(user);// back
+			res.setMsg("Email Already Exists");// errmsg
+			res.setCode(-1);
 
-			return new ResponseEntity(res, HttpStatus.BAD_REQUEST);
+//			return ResponseEntity.status(HttpStatus.OK).body(user);
+//            return ResponseEntity.status(HttpStatus.OK).build();
+			return ResponseEntity.badRequest().body(user);
+//            return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+//            return new ResponseEntity(res, HttpStatus.BAD_REQUEST);
 		}
 	}
 

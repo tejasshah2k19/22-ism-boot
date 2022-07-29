@@ -5,6 +5,8 @@ public class ResponseBean<T> {
 	private String msg;
 
 	T data;
+	
+	Integer code;
 
 	public String getMsg() {
 		return msg;
@@ -21,5 +23,14 @@ public class ResponseBean<T> {
 	public void setData(T data) {
 		this.data = data;
 	}
+
+	public Integer getCode() {
+		return code;
+	}
+
+	public void setCode(Integer code) {
+		this.code = code;
+	}
+	
 
 }
