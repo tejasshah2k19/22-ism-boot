@@ -78,4 +78,34 @@ current month
     category 
     subcategory 
 
-     chart
+
+	chart
+	
+	MultiPartFile file 
+	
+	file.getOriginalName(); =>endswithd -> .jpg .gif .png -> allow 
+	file.getBytes() -> /1024 -> mb -> size validation 
+	
+	jquery -> file upload --> img 
+	
+---------------------------------------------------------
+		<dependency>
+			<groupId>org.springdoc</groupId>
+			<artifactId>springdoc-openapi-ui</artifactId>
+			<version>1.6.6</version>
+		</dependency>
+
+	 
+	@Bean
+	public OpenAPI myapi() {
+		return new OpenAPI().info(
+				new Info().title("22-ism-boot").version("1.0")
+				.description("spring boot demo")
+				.termsOfService("http://google.com/")
+				.license(new License().name("GNPUL").url("http://free.com")));
+			
+---------------------------------------------------------
+	
+	
+	
+
